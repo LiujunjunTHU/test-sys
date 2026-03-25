@@ -8,13 +8,14 @@ st.set_page_config(page_title="資料維護系統", layout="wide")
 # ──────────────────────────────────────────
 def get_conn():
     s = st.secrets
+    server = f"{s['DB_SERVER']}:{s['DB_PORT']}"
     return pymssql.connect(
-        server=s["DB_SERVER"],
-        port=int(s["DB_PORT"]),
+        server=server,
         database=s["DB_NAME"],
         user=s["DB_USER"],
         password=s["DB_PASSWORD"],
         charset="UTF-8",
+        login_timeout=10,
     )
 
 def db_fetch(sql, params=()):
