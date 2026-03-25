@@ -3,6 +3,10 @@ import pymssql
 
 st.set_page_config(page_title="資料維護系統", layout="wide")
 
+# 除錯：顯示目前讀到的 secrets keys
+with st.expander("🔧 除錯資訊（確認後刪除）"):
+    st.write("Secrets keys:", list(st.secrets.keys()) if st.secrets else "（空）")
+
 # ──────────────────────────────────────────
 # DB 工具函數
 # ──────────────────────────────────────────
