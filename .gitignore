@@ -11,6 +11,9 @@ frontend/dist/
 *.log
 npm-debug.log*
 
+# Streamlit secrets (contains DB credentials)
+streamlit_app/.streamlit/secrets.toml
+
 # Claude Code settings
 .claude/
 
